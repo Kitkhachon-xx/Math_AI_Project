@@ -1,119 +1,146 @@
-README: Home Price Prediction
+# 🏠 Home Price Prediction using Gradient Descent
 
-🏡 รายงานโครงการพยากรณ์ราคาบ้าน (Home Price Prediction)
+This project presents a machine learning model that applies the Gradient Descent algorithm to predict house prices based on various independent variables. It is part of the coursework for **1321203 Mathematics for Artificial Intelligence 1**, at Panyapiwat Institute of Management.
 
-1. บทนำ (Introduction)
+## 📌 Project Overview
 
-การคาดการณ์ราคาบ้านเป็นหนึ่งในปัญหาทางเศรษฐกิจที่สำคัญและพบได้บ่อยในอุตสาหกรรมอสังหาริมทรัพย์ การคาดการณ์ราคาบ้านอย่างแม่นยำช่วยให้ผู้พัฒนาอสังหาริมทรัพย์ นักลงทุน และผู้บริโภคสามารถตัดสินใจได้อย่างมีประสิทธิภาพมากยิ่งขึ้น โครงการนี้มีเป้าหมายในการพัฒนาโมเดล Machine Learning โดยใช้เทคนิค Linear Regression เพื่อทำนายราคาบ้านจากข้อมูลที่มีอยู่ เช่น พื้นที่ใช้สอย จำนวนห้อง ขนาดที่ดิน และระยะทางจากใจกลางเมือง
+House price prediction is a significant problem in the field of real estate analytics. In this project, we explore how the **Gradient Descent** algorithm can be used to optimize the parameters in a **Linear Regression** model for accurate price forecasting. The factors considered include:
 
-2. วัตถุประสงค์ (Objective)
+- House Area (sq.m.)
+- Number of Rooms
+- Land Size (sq.wa)
+- Price per sq.m.
 
-เพื่อวิเคราะห์ปัจจัยที่มีผลต่อราคาบ้าน
+---
 
-เพื่อสร้างโมเดลพยากรณ์ราคาบ้านโดยใช้เทคนิคการเรียนรู้ของเครื่อง
+## 📚 Table of Contents
 
-เพื่อประเมินประสิทธิภาพของโมเดลผ่านค่าความคลาดเคลื่อนและกราฟการเรียนรู้
+1. [Introduction](#introduction)
+2. [Related Concepts](#related-concepts)
+3. [Methodology](#methodology)
+4. [Results](#results)
+5. [Conclusion](#conclusion)
+6. [References](#references)
 
-3. ขอบเขตของโครงการ (Scope of Project)
+---
 
-โปรเจกต์นี้จำกัดอยู่ที่การใช้ข้อมูลจำลอง (synthetic data) ซึ่งประกอบด้วยปัจจัยพื้นฐาน 4 ตัวแปร เพื่อทำนายราคาบ้านผ่านโมเดล Linear Regression แบบหลายตัวแปร โดยใช้การฝึกโมเดลผ่าน Gradient Descent
+## 🧩 Introduction
 
-4. เครื่องมือและไลบรารีที่ใช้ (Tools and Libraries)
+In the current era, purchasing a house is one of the most important investments. Given the complexity of factors affecting housing prices (e.g., area, location, economic conditions), we aim to build a model that can predict prices accurately. This project leverages **Gradient Descent** as an optimization algorithm in the context of **supervised learning**.
 
-ภาษา Python
+---
 
-Jupyter Notebook
+## 📖 Related Concepts
 
-ไลบรารีที่ใช้: numpy, pandas, matplotlib
+### 🔹 Linear Regression
 
-5. โครงสร้างข้อมูล (Dataset Structure)
+We use linear regression to model the relationship between independent variables and house price.
 
-ข้อมูลถูกจำลองขึ้นโดยใช้ชุดตัวแปรดังนี้:
+\[
+y = \theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \theta_4x_4
+\]
 
-ชื่อตัวแปร
+### 🔹 Gradient Descent
 
-คำอธิบาย
+An optimization technique to minimize the **loss function** by iteratively updating parameters.
 
-X
+### 🔹 Learning Rate (α)
 
-พื้นที่ใช้สอยของบ้าน (หน่วย: ตารางเมตร)
+Controls the size of steps taken toward the minimum of the loss function.
 
-x1
+### 🔹 Loss Functions
 
-จำนวนห้องพักภายในบ้าน
+- **MAE (Mean Absolute Error)**
+- **MSE (Mean Squared Error)**
+- **SSE (Sum of Squared Errors)**
 
-x2
+### 🔹 Normalization
 
-ระยะทางจากใจกลางเมือง (กิโลเมตร)
+Preprocessing step to scale input features to the same range (0 to 1) before training.
 
-x3
+---
 
-ขนาดที่ดินโดยรอบบ้าน (ตารางเมตร)
+## ⚙️ Methodology
 
-Y
+### 1. Data Collection
 
-ราคาบ้าน (หน่วย: บาท) ซึ่งเป็นตัวแปรเป้าหมาย (Target Variable)
+Collected housing data including area, room count, land size, and price per sq.m.
 
-6. ขั้นตอนการดำเนินงาน (Workflow)
+### 2. Data Preprocessing
 
-การเตรียมข้อมูล (Data Preparation):
+Applied **Normalization** to scale features.
 
-กำหนดข้อมูลแบบจำลองด้วยค่าคงที่
+### 3. Model Building
 
-ทำ Normalization เพื่อให้อยู่ในช่วง [0, 1]
+Constructed a linear regression model and used **Gradient Descent** to optimize parameters \( \theta_0 \) to \( \theta_4 \).
 
-การฝึกโมเดล (Model Training):
+### 4. Parameter Tuning
 
-ใช้สูตร Linear Regression แบบหลายตัวแปร:
+Updated the parameters across 800 epochs with:
 
+\[
+\theta_i^{new} = \theta_i - \alpha \cdot \frac{\partial SSE}{\partial \theta_i}
+\]
 
-ใช้ Gradient Descent ในการหาค่า  ที่เหมาะสม
+### 5. Denormalization
 
-ปรับค่าด้วย Learning Rate และ Epoch ตามที่กำหนด
+Reverted normalized predictions back to real-world scale using:
 
-การประเมินผล (Evaluation):
+\[
+y = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \theta_4 x_4
+\]
 
-คำนวณค่า SSE (Sum of Squared Error)
+---
 
-พล็อตกราฟการลดลงของความคลาดเคลื่อนเพื่อดู convergence
+## 📊 Results
 
-นำโมเดลที่เรียนรู้ได้มาทำนายราคาบ้านจากข้อมูลใหม่
+After 800 optimization rounds, the final denormalized model:
 
-7. ผลลัพธ์ (Results)
+\[
+y = -5,992,800 + 44,393.77x_1 - 367,345x_2 - 19,659x_3 + 222.61x_4
+\]
 
-โมเดลสามารถเรียนรู้ค่าพารามิเตอร์ต่างๆ อย่างแม่นยำภายในจำนวนรอบที่กำหนด (เช่น 800 รอบ)
+### Accuracy
 
-กราฟแสดงค่า SSE ลดลงอย่างต่อเนื่อง แสดงถึงการเรียนรู้ที่ดี
+- Mean error: **0.0658%**
+- Tested on multiple real-world cases with less than **9% error**.
 
-เมื่อทดสอบกับข้อมูลจริง (ค่าที่กำหนดไว้ล่วงหน้า) โมเดลให้ผลใกล้เคียงกับค่าจริง
+---
 
-8. ข้อเสนอแนะและการพัฒนาในอนาคต (Suggestions for Future Work)
+## 🧠 Conclusion
 
-เพิ่มจำนวนข้อมูลและใช้ข้อมูลจากแหล่งจริง เช่น ฐานข้อมูลอสังหาริมทรัพย์จริงในประเทศไทย
+The model demonstrates that Gradient Descent is an effective method for optimizing linear regression parameters in house price prediction. With proper feature selection and normalization, the model can generalize well to unseen data.
 
-ทดลองใช้โมเดลอื่น เช่น Random Forest, XGBoost หรือ Neural Networks
+### ✅ Pros
 
-ใช้เทคนิค Cross-Validation เพื่อประเมินโมเดลอย่างครอบคลุม
+- High accuracy
+- Interpretable model
 
-เพิ่มการวัดผล เช่น MAE, RMSE, R-squared
+### ⚠️ Cons
 
-9. วิธีใช้งานโปรเจกต์ (How to Use)
+- Requires careful tuning of learning rate
+- Sensitive to outliers
 
-ดาวน์โหลดไฟล์ Home_price_prediction.ipynb
+---
 
-เปิดไฟล์ผ่าน Jupyter Notebook หรือ Google Colab
+## 📚 References
 
-รันเซลล์ตามลำดับเพื่อทำการฝึกและทดสอบโมเดล
+- ResearchGate
+- BorntoDev
+- Medium.com
+- Bangkok Asset: [บ้านมือสองที่ใช้สำหรับการเก็บข้อมูล](https://www.bangkokassets.com)
 
-สามารถเปลี่ยนค่าข้อมูลใหม่เพื่อทำนายราคาบ้านได้ทันที
+---
 
-10. ข้อมูลผู้จัดทำ (Author)
+## 👨‍💻 Authors
 
-ผู้จัดทำ: [ระบุชื่อผู้จัดทำหรือลิงก์ GitHub]
+- Kritkhachon Jirawongrungreung (6752300216)
+- Phanuphong Onlamul (6752300305)
+- Phuriphon Hemkul (6752300313)
 
-ปีการจัดทำ: 2025
+Course: Mathematics for AI 1  
+Instructor: Asst. Prof. Tinnapop Dindam  
+Institution: Panyapiwat Institute of Management  
+Academic Year: 2024 (Semester 1.2)
 
-ติดต่อ: [อีเมลหรือ GitHub Profile หากต้องการระบุ]
-
-เอกสารนี้จัดทำขึ้นเพื่อใช้ประกอบการอัปโหลดโปรเจกต์บน GitHub พร้อมให้ผู้ใช้งานเข้าใจที่มา วิธีทำงาน และการประยุกต์ใช้โมเดลพยากรณ์ราคาบ้าน
-
+---
