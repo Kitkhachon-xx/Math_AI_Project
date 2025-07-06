@@ -141,6 +141,6 @@ The model demonstrates that Gradient Descent is an effective method for optimizi
 Course: Mathematics for AI 1  
 Instructor: Asst. Prof. Tinnapop Dindam  
 Institution: Panyapiwat Institute of Management  
-Academic Year: 2024 (Semester 1.2)
+Academic Year: 2024 (Semester 2.1)
 
 ---
