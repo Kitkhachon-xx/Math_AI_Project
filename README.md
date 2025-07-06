@@ -37,7 +37,7 @@ In the current era, purchasing a house is one of the most important investments.
 We use linear regression to model the relationship between independent variables and house price.
 
 \[
-y = \theta_0 + \theta_1x_1 + \theta_2x_2 + \theta_3x_3 + \theta_4x_4
+y = θ0 + θ1 + θ2 + θ3 + θ4
 \]
 
 ### 🔹 Gradient Descent
