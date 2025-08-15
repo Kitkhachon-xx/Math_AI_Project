@@ -1,32 +1,25 @@
-# 🏠 Home Price Prediction using Gradient Descent
+# 🏠 Home Price Prediction Using Gradient Descent
 
-This project presents a machine learning model that applies the Gradient Descent algorithm to predict house prices based on various independent variables. It is part of the coursework for **1321203 Mathematics for Artificial Intelligence 1**, at Panyapiwat Institute of Management.
-
-## 📌 Project Overview
-
-House price prediction is a significant problem in the field of real estate analytics. In this project, we explore how the **Gradient Descent** algorithm can be used to optimize the parameters in a **Linear Regression** model for accurate price forecasting. The factors considered include:
-
-- House Area (sq.m.)
-- Number of Rooms
-- Land Size (sq.wa)
-- Price per sq.m.
+This repository presents a machine learning project designed to predict housing prices using a **Linear Regression model** optimized via **Gradient Descent**. It was developed as part of the coursework for **1321203 Mathematics for Artificial Intelligence 1** at **Panyapiwat Institute of Management**.
 
 ---
 
-## 📚 Table of Contents
+## 📌 Project Overview
 
-1. [Introduction](#introduction)
-2. [Related Concepts](#related-concepts)
-3. [Methodology](#methodology)
-4. [Results](#results)
-5. [Conclusion](#conclusion)
-6. [References](#references)
+Predicting the price of a house is a fundamental problem in the real estate domain. The objective of this project is to demonstrate how **Gradient Descent** can be used to minimize the loss function of a linear regression model and produce accurate predictions for housing prices.
+The following features are considered:
+
+* House Area *(sq.m.)*
+* Number of Rooms
+* Land Size *(sq.wa)*
+* Price per sq.m.
 
 ---
 
 ## 🧩 Introduction
 
-In the current era, purchasing a house is one of the most important investments. Given the complexity of factors affecting housing prices (e.g., area, location, economic conditions), we aim to build a model that can predict prices accurately. This project leverages **Gradient Descent** as an optimization algorithm in the context of **supervised learning**.
+Buying a home is one of the most significant financial decisions a person can make. With numerous factors influencing house prices (e.g., size, location, economic conditions), it is often difficult to estimate an accurate value.
+This project applies **supervised learning** and the **Gradient Descent** algorithm to solve this problem by building a predictive model that can learn from historical data.
 
 ---
 
@@ -34,113 +27,100 @@ In the current era, purchasing a house is one of the most important investments.
 
 ### 🔹 Linear Regression
 
-We use linear regression to model the relationship between independent variables and house price.
+Models the relationship between the dependent variable *(house price)* and multiple independent variables:
 
-\[
-y = θ0 + θ1x1 + θ2x2 + θ3x3 + θ4x4
-\]
+```math
+y = θ_0 + θ_1x_1 + θ_2x_2 + θ_3x_3 + θ_4x_4
+```
 
 ### 🔹 Gradient Descent
 
-An optimization technique to minimize the **loss function** by iteratively updating parameters.
+An iterative optimization algorithm used to minimize the loss function by updating model parameters:
+
+```math
+θ_i^{new} = θ_i - α \cdot \frac{∂SSE}{∂θ_i}
+```
 
 ### 🔹 Learning Rate (α)
 
-Controls the size of steps taken toward the minimum of the loss function.
+Controls the step size during each iteration of Gradient Descent.
 
 ### 🔹 Loss Functions
 
-- **MAE (Mean Absolute Error)**
-- **MSE (Mean Squared Error)**
-- **SSE (Sum of Squared Errors)**
+* **MAE** – Mean Absolute Error
+* **MSE** – Mean Squared Error
+* **SSE** – Sum of Squared Errors
 
 ### 🔹 Normalization
 
-Preprocessing step to scale input features to the same range (0 to 1) before training.
+Scaling the dataset to a common range (0–1) before training to improve convergence.
 
 ---
 
 ## ⚙️ Methodology
 
-### 1. Data Collection
-
-Collected housing data including area, room count, land size, and price per sq.m.
-
-### 2. Data Preprocessing
-
-Applied **Normalization** to scale features.
-
-### 3. Model Building
-
-Constructed a linear regression model and used **Gradient Descent** to optimize parameters \( \theta_0 \) to \( \theta_4 \).
-
-### 4. Parameter Tuning
-
-Updated the parameters across 800 epochs with:
-
-\[
-\theta_i^{new} = \theta_i - \alpha \cdot \frac{\partial SSE}{\partial \theta_i}
-\]
-
-### 5. Denormalization
-
-Reverted normalized predictions back to real-world scale using:
-
-\[
-y = \theta_0 + \theta_1 x_1 + \theta_2 x_2 + \theta_3 x_3 + \theta_4 x_4
-\]
+1. **Data Collection**
+   Housing records with relevant features were collected.
+2. **Data Preprocessing**
+   Applied normalization to ensure all features are on a similar scale.
+3. **Model Building**
+   Constructed a linear regression model and implemented Gradient Descent as the optimization technique.
+4. **Parameter Optimization**
+   Updated model parameters for **800 epochs**.
+5. **Denormalization**
+   Converted the normalized outputs back to real-world values for interpretation and evaluation.
 
 ---
 
 ## 📊 Results
 
-After 800 optimization rounds, the final denormalized model:
+After 800 iterations, the final **denormalized** linear regression equation obtained was:
 
-\[
+```math
 y = -5,992,800 + 44,393.77x_1 - 367,345x_2 - 19,659x_3 + 222.61x_4
-\]
+```
 
-### Accuracy
+**Accuracy**:
 
-- Mean error: **0.0658%**
-- Tested on multiple real-world cases with less than **9% error**.
+* Mean error: **0.0658%**
+* Real-world testing error: **< 9%**
+
+These results demonstrate the effectiveness of Gradient Descent in improving model performance.
 
 ---
 
 ## 🧠 Conclusion
 
-The model demonstrates that Gradient Descent is an effective method for optimizing linear regression parameters in house price prediction. With proper feature selection and normalization, the model can generalize well to unseen data.
+This project confirms that **Gradient Descent** is a powerful and reliable optimization method when applied to linear regression problems such as house price prediction.
 
-### ✅ Pros
+**✅ Pros**
 
-- High accuracy
-- Interpretable model
+* High prediction accuracy
+* Simple and interpretable model
 
-### ⚠️ Cons
+**⚠️ Cons**
 
-- Requires careful tuning of learning rate
-- Sensitive to outliers
+* Sensitive to learning rate selection
+* Affected by outliers in the data
 
 ---
 
 ## 📚 References
 
-- ResearchGate
-- BorntoDev
-- Medium.com
-- Bangkok Asset: [บ้านมือสองที่ใช้สำหรับการเก็บข้อมูล](https://www.bangkokassets.com)
+* ResearchGate
+* BorntoDev
+* Medium.com
+* Bangkok Asset: *บ้านมือสองที่ใช้สำหรับการเก็บข้อมูล* ([https://www.bangkokassets.com](https://www.bangkokassets.com))
 
 ---
 
 ## 👨‍💻 Authors
 
-- Kritkhachon Jirawongrungreung (6752300216)
-- Phanuphong Onlamul (6752300305)
-- Phuriphon Hemkul (6752300313)
+* **Kritkhachon Jirawongrungreung** (6752300216)
+* **Phanuphong Onlamul** (6752300305)
+* **Phuriphon Hemkul** (6752300313)
 
-Course: Mathematics for AI 1  
-Instructor: Asst. Prof. Tinnapop Dindam  
-Institution: Panyapiwat Institute of Management  
-Academic Year: 2024 (Semester 2.1)
-
----
+**Course**: Mathematics for AI 1
+**Instructor**: Asst. Prof. Tinnapop Dindam
+**Institution**: Panyapiwat Institute of Management
+**Academic Year**: 2024 (Semester 2.1)
