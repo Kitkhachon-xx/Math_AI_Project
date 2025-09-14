@@ -121,6 +121,6 @@ This project confirms that **Gradient Descent** is a powerful and reliable optim
 * **Phuriphon Hemkul** (6752300313)
 
 **Course**: Mathematics for AI 1
-**Instructor**: Asst. Prof. Tinnapop Dindam
+**Instructor**: Assistant Professor Dr. Tinnaphop Dindam
 **Institution**: Panyapiwat Institute of Management
 **Academic Year**: 2024 (Semester 2.1)
