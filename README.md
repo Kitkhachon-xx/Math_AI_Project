@@ -126,3 +126,11 @@ This project confirms that **Gradient Descent** is a powerful and reliable optim
 * **Kritkhachon Jirawongrungreung** (6752300216)
 * **Phanuphong Onlamul** (6752300305)
 * **Phuriphon Hemkul** (6752300313)
+
+---
+
+## 📜 License
+
+This project is intended for educational and non-commercial use.
+
+> ⭐ If you find the code useful, feel free to star the repository!
