@@ -1,5 +1,10 @@
 # 🏠 Home Price Prediction Using Gradient Descent
 
+> 📅 Academic Year: 2024\
+> 🧑‍🏫 Instructor: Assistant Professor Dr. Tinnaphop Dindam\
+> 🏫 Institution: Panyapiwat Institute of Management\
+> 💻 Course: Mathematics for AI 1\
+
 This repository presents a machine learning project designed to predict housing prices using a **Linear Regression model** optimized via **Gradient Descent**. It was developed as part of the coursework for **1321203 Mathematics for Artificial Intelligence 1** at **Panyapiwat Institute of Management**.
 
 ---
@@ -119,8 +124,3 @@ This project confirms that **Gradient Descent** is a powerful and reliable optim
 * **Kritkhachon Jirawongrungreung** (6752300216)
 * **Phanuphong Onlamul** (6752300305)
 * **Phuriphon Hemkul** (6752300313)
-
-**Course**: Mathematics for AI 1\
-**Instructor**: Assistant Professor Dr. Tinnaphop Dindam\
-**Institution**: Panyapiwat Institute of Management\
-**Academic Year**: 2024 (Semester 2.1)
