@@ -5,6 +5,8 @@
 > 🏫 Institution: Panyapiwat Institute of Management\
 > 💻 Course: Mathematics for AI 1
 
+---
+
 This repository presents a machine learning project designed to predict housing prices using a **Linear Regression model** optimized via **Gradient Descent**. It was developed as part of the coursework for **1321203 Mathematics for Artificial Intelligence 1** at **Panyapiwat Institute of Management**.
 
 ---
