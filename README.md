@@ -116,11 +116,11 @@ This project confirms that **Gradient Descent** is a powerful and reliable optim
 
 ## 👨‍💻 Authors
 
-* **Kritkhachon Jirawongrungreung** (6752300216)
-* **Phanuphong Onlamul** (6752300305)
-* **Phuriphon Hemkul** (6752300313)
+* **Kritkhachon Jirawongrungreung** (6752300216)\
+* **Phanuphong Onlamul** (6752300305)\
+* **Phuriphon Hemkul** (6752300313)\
 
-**Course**: Mathematics for AI 1
-**Instructor**: Assistant Professor Dr. Tinnaphop Dindam
-**Institution**: Panyapiwat Institute of Management
-**Academic Year**: 2024 (Semester 2.1)
+**Course**: Mathematics for AI 1\
+**Instructor**: Assistant Professor Dr. Tinnaphop Dindam\
+**Institution**: Panyapiwat Institute of Management\
+**Academic Year**: 2024 (Semester 2.1)\
