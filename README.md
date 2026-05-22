@@ -1,4 +1,4 @@
-# 🏠 Home Price Prediction v3 — Dynamic Non-Linear Model
+# 🏠 Home Price Prediction — Dynamic Non-Linear Model
 
 A machine learning project for predicting Thai residential property prices using an ensemble of **XGBoost** and **LightGBM** with automatic hyperparameter tuning via **Optuna**.
 
